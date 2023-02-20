@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgIconsModule } from '@ng-icons/core';
+
+import { heroChevronUp } from '@ng-icons/heroicons/outline';
+import { heroChevronDown } from '@ng-icons/heroicons/outline';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,7 +25,10 @@ import { ShopingEditComponent } from './shoping-list/shoping-edit/shoping-edit.c
     ShopingListComponent,
     ShopingEditComponent,
   ],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    NgIconsModule.withIcons({ heroChevronUp, heroChevronDown }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

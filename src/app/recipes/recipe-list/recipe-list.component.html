@@ -1,1 +1,30 @@
-<p>recipe-list works!</p>
+<div class="flex">
+  <div class="basis-full bg-white sm:rounded-lg">
+    <button
+      class="group relative flex px-10 py-3 justify-center rounded-md border border-transparent bg-green-600 text-md font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+    >
+      New Recepie
+    </button>
+    <hr class="my-4" />
+    <div class="basis-full">
+      <a
+        href="#"
+        class="flex justify-between w-full border-t border-gray-200 bg-white hover:bg-gray-50 px-4 py-5 sm:px-6 shadow"
+        *ngFor="let recipe of recipes"
+      >
+        <div class="basis-auto">
+          <h4>{{ recipe.name }}</h4>
+          <p>{{ recipe.description }}</p>
+        </div>
+        <span class="basis-auto">
+          <img
+            [src]="recipe.imagePath"
+            alt="{{ recipe.name }}"
+            class="max-h-[50px]"
+          />
+        </span>
+      </a>
+    </div>
+    <app-recipe-itm></app-recipe-itm>
+  </div>
+</div>

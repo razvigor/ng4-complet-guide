@@ -1,1 +1,69 @@
-<p>recipe-detail works!</p>
+<div class="px-3.5">
+  <div class="group relative">
+    <div
+      class="relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1"
+    >
+      <img
+        src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg"
+        alt=""
+        class="h-full w-full object-cover object-center"
+      />
+    </div>
+    <h3 class="mt-6 text-xl text-gray-800 mb-4">Recipe name</h3>
+
+    <div class="relative inline-block text-left">
+      <div>
+        <button
+          type="button"
+          class="inline-flex w-full justify-center items-center gap-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+          (click)="menageOpenhandler()"
+          id="menu-button"
+          aria-expanded="true"
+          aria-haspopup="true"
+        >
+          Menage Recpe
+          <ng-icon name="heroChevronUp" *ngIf="isMenageOpen"></ng-icon>
+          <ng-icon name="heroChevronDown" *ngIf="!isMenageOpen"></ng-icon>
+        </button>
+      </div>
+
+      <div
+        *ngIf="isMenageOpen"
+        class="absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="menu-button"
+        tabindex="-1"
+      >
+        <div class="py-1" role="none">
+          <a
+            href="#"
+            class="text-gray-700 block px-4 py-2 text-sm"
+            role="menuitem"
+            tabindex="-1"
+            id="menu-item-0"
+            >To Shoping List</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 block px-4 py-2 text-sm"
+            role="menuitem"
+            tabindex="-1"
+            id="menu-item-1"
+            >Edit Recipe</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 block px-4 py-2 text-sm"
+            role="menuitem"
+            tabindex="-1"
+            id="menu-item-1"
+            >Delete Recipe</a
+          >
+        </div>
+      </div>
+    </div>
+    <p class="my-4">Description</p>
+    <div class="basis-full">Ingredients</div>
+  </div>
+</div>
